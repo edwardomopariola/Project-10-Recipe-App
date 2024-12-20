@@ -1,0 +1,21 @@
+body {
+    background-color: orangered;
+    font-family: 'Times New Roman', Times, serifte;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#app {
+    padding: 20px;
+}
+
+#recipe-container {
+    background-color: rgb(10, 78, 56);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px;
+}
+
