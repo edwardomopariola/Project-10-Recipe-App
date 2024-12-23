@@ -5,12 +5,12 @@
 // let youtubeLink = document.getElementById('youtube-link');
 // let recipeBtn = document.getElementById('new-recipe-btn')
 
-function getRandomRecipe() {
+function getRandomRecipe() {  //Random recipe function
     axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
     .then(Response => {
         let recipe = Response.data.meals[0]
 
-        //getting DOM lement 
+        //getting DOM Element 
         let recipeImage = document.getElementById('recipe-image');
         let recipeName = document.getElementById('recipe-name');
         let recipeInstructions = document.getElementById('recipe-instructions');
@@ -23,7 +23,7 @@ function getRandomRecipe() {
         recipeImage.alt = recipe.strMeal;
         recipeName.textContent = recipe.strMeal;
 
-        //youtube video link
+        //youtube link
         youtubeLink.href = recipe.strYoutube;
 
         //recipe instructions
@@ -48,13 +48,9 @@ function getRandomRecipe() {
     });
 }
 
-function setRecipe() {
-    getRandomRecipe();
-}
-
 //fetch random recipe when page load
 document.addEventListener('DOMContentLoaded', () => {
-    setRecipe();
+    getRandomRecipe();
 });
 
 document.getElementById('new-recipe-btn').addEventListener('click', getRandomRecipe);  //new recipe btn
